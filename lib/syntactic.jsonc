@@ -1,0 +1,19 @@
+{
+	"plugins": [
+		"eslint",
+		"import",
+		"jsdoc",
+		"oxc",
+		"promise",
+		"typescript",
+		"unicorn"
+	],
+	"categories": {
+		"correctness": "error",
+		"pedantic": "error",
+		"restriction": "error",
+		"suspicious": "error",
+		"perf": "error",
+		"nursery": "error"
+	}
+}

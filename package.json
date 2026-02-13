@@ -1,0 +1,54 @@
+{
+	"name": "@firefoxic/oxlint-config",
+	"description": "Shared config for oxlint by firefoxic.",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": {
+		"name": "Sergey Artemov",
+		"email": "firefoxic.dev@gmail.com"
+	},
+	"homepage": "https://github.com/firefoxic/oxlint-config#readme",
+	"bugs": {
+		"url": "https://github.com/firefoxic/oxlint-config/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/firefoxic/oxlint-config.git"
+	},
+	"type": "module",
+	"engines": {
+		"node": ">=22.18.0",
+		"pnpm": ">=10.29.3"
+	},
+	"files": [
+		"./lib/**/*.d.ts",
+		"./lib/**/*.js",
+		"./lib/**/*.jsonc",
+		"!**/*.test.js"
+	],
+	"scripts": {
+		"help": "make help",
+		"oxlint": "oxlint"
+	},
+	"peerDependencies": {
+		"oxlint": "^1.47.0"
+	},
+	"dependencies": {
+		"@stylistic/eslint-plugin": "^5.8.0",
+		"eslint-plugin-simple-import-sort": "^12.1.1"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "^8.55.0",
+		"eslint": "^10.0.0",
+		"oxlint": "^1.47.0"
+	},
+	"keywords": [
+		"config",
+		"oxlint",
+		"javascript",
+		"js",
+		"lint",
+		"linter",
+		"linting"
+	]
+}
