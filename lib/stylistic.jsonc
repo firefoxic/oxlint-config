@@ -1,8 +1,8 @@
 {
 	"jsPlugins": [
-		"@stylistic/eslint-plugin",
-		"eslint-plugin-simple-import-sort",
-		"./enough-is-enough/index.js"
+		"./enough-is-enough/index.js",
+		"./simple-import-sort.js",
+		"./stylistic.js"
 	],
 	"categories": {
 		// "style": "error",

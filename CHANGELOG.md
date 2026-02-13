@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- JS plugin connections are no longer broken.
+
 ## [0.1.0] — 2026–02–13
 
 ### Added
