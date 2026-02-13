@@ -57,7 +57,7 @@ define install_pnpm
 endef
 
 define update_pnpm
-	@pnpm dlx semver -- $$(pnpm -v) -r $(REQUIRED_PNPM) >/dev/null 2>&1 || pnpm self-update
+	@pnpm dlx semver -- $$(pnpm -v) -r "$(REQUIRED_PNPM)" >/dev/null 2>&1 || pnpm self-update
 endef
 
 define install_dependencies
