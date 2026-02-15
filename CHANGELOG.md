@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [0.1.2] — 2026–02–15
+
 ### Fixed
 
 - The following rules are now disabled:
@@ -29,6 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Initial config for `oxlint`.
 
-[Unreleased]: https://github.com/firefoxic/oxlint-config/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/firefoxic/oxlint-config/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/firefoxic/oxlint-config/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/firefoxic/oxlint-config/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/firefoxic/oxlint-config/compare/v0.0.1...v0.1.0
