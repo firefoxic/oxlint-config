@@ -7,6 +7,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- The following rules are now disabled:
+	- `import/max-dependencies`,
+	- `import/no-relative-parent-imports`,
+	- `import/no-default-export`,
+	- `oxc/no-async-await`,
+	- `oxc/no-optional-chaining`,
+	- `oxc/no-rest-spread-properties`.
+
 ## [0.1.1] — 2026–02–13
 
 ### Fixed
