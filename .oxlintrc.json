@@ -5,6 +5,6 @@
 		"./lib/stylistic.jsonc"
 	],
 	"env": {
-		"builtin": true
+		"node": true
 	}
 }
