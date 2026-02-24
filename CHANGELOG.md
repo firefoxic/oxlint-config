@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Fixed
+
+- Functions can now be called before they are declared.
+
 ## [0.1.2] — 2026–02–15
 
 ### Fixed

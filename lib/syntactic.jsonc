@@ -17,6 +17,12 @@
 		"nursery": "error"
 	},
 	"rules": {
+		"no-use-before-define": [
+			"error",
+			{
+				"functions": false
+			}
+		],
 		"import/max-dependencies": "off",
 		"import/no-relative-parent-imports": "off",
 		"import/no-default-export": "off",
