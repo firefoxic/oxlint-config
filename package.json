@@ -1,7 +1,7 @@
 {
 	"name": "@firefoxic/oxlint-config",
 	"description": "Shared config for oxlint by firefoxic.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"license": "MIT",
 	"author": {
 		"name": "Sergey Artemov",
