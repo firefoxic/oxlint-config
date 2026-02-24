@@ -10,6 +10,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 ### Fixed
 
 - Functions can now be called before they are declared.
+- For files in the `test/` directory and files with the suffixes `.test` or `.spec` before the extension, the following rules are now disabled:
+	- `max-lines`,
+	- `max-lines-per-function`.
 
 ## [0.1.2] — 2026–02–15
 
