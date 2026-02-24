@@ -30,15 +30,10 @@ Set your `.oxlintrc.json` to:
 		"./node_modules/@firefoxic/oxlint-config/lib/stylistic.jsonc"
 	],
 	"categories": {
-		"correctness": "error",
-		"pedantic": "error",
-		"restriction": "error",
-		"suspicious": "error",
-		"perf": "error",
-		"nursery": "error"
+		"style": "warn"
 	},
 	"env": {
-		"builtin": true
+		"node": true
 	},
 	"rules": {
 		// Your rules
@@ -50,7 +45,7 @@ Set your `.oxlintrc.json` to:
 				"**/*.test.{js,ts}"
 			],
 			"rules": {
-				"import/no-default-export": "off"
+				"no-undefined": "off"
 			}
 		}
 	]
