@@ -7,6 +7,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Added
+
+- **Breaking change:**
+	- The configuration now requires `oxlint` version `1.51.0` or higher, which means that you can now enable the `typeAware` and `typeCheck` options in your config.
+
 ## [0.1.3] — 2026–02–24
 
 ### Fixed
