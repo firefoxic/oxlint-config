@@ -58,7 +58,7 @@ Set your `.oxlintrc.json` to:
 [changelog-url]: https://github.com/firefoxic/oxlint-config/blob/main/CHANGELOG.md
 [changelog-image]: https://img.shields.io/badge/CHANGELOG-md-limegreen
 
-[npm-url]: https://npmjs.org/package/@firefoxic/oxlint-config
+[npm-url]: https://www.npmjs.com/package/@firefoxic/oxlint-config
 [npm-image]: https://badge.fury.io/js/@firefoxic%2Foxlint-config.svg
 
 [test-url]: https://github.com/firefoxic/oxlint-config/actions
