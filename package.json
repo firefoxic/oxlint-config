@@ -17,8 +17,19 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=22.18",
-		"pnpm": ">=10.30"
+		"node": ">=22.18"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": ">=26.4",
+			"onFail": "download"
+		},
+		"packageManager": {
+			"name": "pnpm",
+			"version": ">=11.9",
+			"onFail": "download"
+		}
 	},
 	"files": [
 		"./lib/**/*.d.ts",
@@ -27,20 +38,19 @@
 		"!**/*.test.js"
 	],
 	"scripts": {
-		"help": "make help",
-		"oxlint": "oxlint"
+		"help": "make help"
 	},
 	"peerDependencies": {
-		"oxlint": "^1.56.0"
+		"oxlint": "^1.72.0"
 	},
 	"dependencies": {
 		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-simple-import-sort": "^12.1.1"
+		"eslint-plugin-simple-import-sort": "^13.0.0"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "^8.57.1",
-		"eslint": "^10.0.3",
-		"oxlint": "^1.56.0"
+		"@typescript-eslint/parser": "^8.62.1",
+		"eslint": "^10.6.0",
+		"oxlint": "^1.72.0"
 	},
 	"keywords": [
 		"config",

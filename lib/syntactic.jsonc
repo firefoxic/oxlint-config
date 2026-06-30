@@ -33,6 +33,14 @@
 	"overrides": [
 		{
 			"files": [
+				"**/*.d.ts",
+			],
+			"rules": {
+				"import/unambiguous": "off",
+			},
+		},
+		{
+			"files": [
 				"test/**/*.{js,ts}",
 				"**/*.{spec,test}.{js,ts}"
 			],

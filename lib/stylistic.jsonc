@@ -20,26 +20,33 @@
 	},
 	"rules": {
 		/* style */
-		"arrow-body-style": [
-			"error",
-			"as-needed"
-		],
+		"arrow-body-style": "error",
 		"curly": [
 			"error",
 			"multi-line"
 		],
+		"default-case-last": "error",
+		"default-param-last": "error",
 		"func-style": [
 			"error",
 			"declaration"
 		],
+		"grouped-accessor-pairs": [
+			"error",
+			"getBeforeSet",
+			{
+				"enforceForTSTypes": true
+			}
+		],
 		"guard-for-in": "error",
-		"no-lonely-if": "error",
 		"no-multi-assign": "error",
 		"no-return-assign": "error",
-		"no-template-curly-in-string": "error",
+		"object-shorthand": "error",
 		"prefer-object-has-own": "error",
 		"prefer-template": "error",
-		"unicorn/no-lonely-if": "error",
+		"import/exports-last": "error",
+		"import/first": "error",
+		"import/newline-after-import": "error",
 		"unicorn/no-nested-ternary": "error",
 		/* Enough is enough rules */
 		"enough-is-enough/no-multiline-named-imports": "error",

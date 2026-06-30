@@ -7,6 +7,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Added
+
+- **Breaking changes:**
+	- The configuration now requires `oxlint` version `1.72.0` or higher.
+	- The following rules has been added:
+		- `default-case-last`,
+		- `default-param-last`,
+		- `grouped-accessor-pairs`,
+		- `object-shorthand`,
+		- `import/exports-last`,
+		- `import/first`,
+		- `import/newline-after-import`.
+
 ## [0.3.1] — 2026–03–18
 
 ### Fixed
@@ -17,7 +30,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ### Added
 
-- **Breaking change:**
+- **Breaking changes:**
 	- The configuration now requires `oxlint` version `1.51.0` or higher, which means that you can now enable the `typeAware` and `typeCheck` options in your config.
 
 ## [0.1.3] — 2026–02–24
