@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Added
+
+- The `no-console` rule now allows the use of the `error`, `info`, and `warn` methods.
+
 ## [0.4.0] — 2026–07–01
 
 ### Added

@@ -17,6 +17,16 @@
 		"nursery": "error"
 	},
 	"rules": {
+		"no-console": [
+			"error",
+			{
+				"allow": [
+					"error",
+					"info",
+					"warn"
+				]
+			}
+		],
 		"no-use-before-define": [
 			"error",
 			{
