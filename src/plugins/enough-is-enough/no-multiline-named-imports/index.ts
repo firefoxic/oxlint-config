@@ -1,13 +1,19 @@
-export default {
+import type { Rule } from "../types.ts"
+
+const rule: Rule = {
 	meta: {
 		type: `layout`,
+		docs: {
+			description: `Disallow multi-line named imports`,
+		},
 		fixable: `code`,
 		messages: {
 			multiline: `Multi-line named imports are disallowed.`,
 		},
+		schema: [],
 	},
 	create (context) {
-		let sourceCode = context.sourceCode
+		let { sourceCode } = context
 
 		return {
 			ImportDeclaration (node) {
@@ -38,7 +44,7 @@ export default {
 							newImport += `{ ${imports} } from ${source}`
 
 							let lastToken = sourceCode.getLastToken(node)
-							let hasSemicolon = lastToken && lastToken.value === `;`
+							let hasSemicolon = lastToken?.value === `;`
 
 							if (hasSemicolon) newImport += `;`
 
@@ -47,7 +53,8 @@ export default {
 					})
 				}
 			},
-
 		}
 	},
 }
+
+export default rule

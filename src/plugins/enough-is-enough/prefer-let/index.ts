@@ -3,30 +3,33 @@
  * @author Charles Lowell
  */
 
+import type { NodeOf, Rule } from "../types.ts"
+
+type Node = NodeOf<`VariableDeclaration`>
+
 /**
  * Check if a node is within an ambient context (inside a `declare` module declaration).
  *
  * Walks up the parent chain to determine if the node is inside a TypeScript module declaration that has the `declare` flag set to true.
  *
- * @param {import("@typescript-eslint/types").TSESTree.Node} node - The AST node to check.
- * @returns {boolean} True if the node is inside an ambient context, false otherwise.
+ * @param node - The AST node to check.
+ * @returns True if the node is inside an ambient context, false otherwise.
  */
-function isInAmbientContext (node) {
-	let current = node.parent
+function isInAmbientContext (node: Node): boolean {
+	let current: Node[`parent`] | null = node.parent
 	while (current) {
-		if (current.type === `TSModuleDeclaration` && current.declare === true) return true
+		if (current.type === `TSModuleDeclaration` && current.declare) return true
 
 		current = current.parent
 	}
 	return false
 }
 
-export default {
+const rule: Rule = {
 	meta: {
+		type: `suggestion`,
 		docs: {
 			description: `Use "let" declarations to bind names to values`,
-			category: `Stylistic Issues`,
-			recommended: false,
 		},
 		fixable: `code`,
 		schema: [],
@@ -39,22 +42,18 @@ export default {
 	 * - Reports any `const` declaration that is not in a top-level scope (global, module, or Program) and provides a fixer
 	 *   that replaces the `const` token with `let`.
 	 *
-	 * The implementation uses the provided context to obtain sourceCode and scope information.
-	 *
-	 * @param {import("eslint").Rule.RuleContext} context - ESLint rule context.
-	 * @returns {Object<string, Function>} An object of AST node visitor functions (notably a `VariableDeclaration` handler).
+	 * @param context - Rule context.
+	 * @returns AST node visitors.
 	 */
 	create (context) {
-		let sourceCode = context.sourceCode
+		let { sourceCode } = context
 
-		function getScope (node) {
-			return sourceCode.getScope ? sourceCode.getScope(node) : context.getScope()
-		}
+		function isTopLevelScope (node: Node): boolean {
+			let scope = sourceCode.getScope(node)
 
-		function isTopLevelScope (node) {
-			return getScope(node).type === `global`
-				|| getScope(node).type === `module`
-				|| getScope(node).block.type === `Program`
+			return scope.type === `global`
+				|| scope.type === `module`
+				|| scope.block.type === `Program`
 		}
 
 		return {
@@ -70,6 +69,8 @@ export default {
 				else if (node.kind === `const` && !isTopLevelScope(node)) {
 					let constToken = sourceCode.getFirstToken(node)
 
+					if (!constToken) return
+
 					context.report({
 						message: `"const" declaration outside top-level scope`,
 						node,
@@ -82,3 +83,5 @@ export default {
 		}
 	},
 }
+
+export default rule

@@ -10,10 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 ### Changed
 
 - The configuration now requires `oxlint` version `1.81.0` or higher.
+- The JSON configs have moved from `lib/*.jsonc` to `dist/*.json`: extend `./node_modules/@firefoxic/oxlint-config/dist/syntactic.json` and `./node_modules/@firefoxic/oxlint-config/dist/stylistic.json` in your `.oxlintrc.json`.
 
 ### Added
 
 - The `no-console` rule now allows the use of the `error`, `info`, and `warn` methods.
+- The configs are now exported for `oxlint.config.ts`: the default export of `@firefoxic/oxlint-config` combines both parts, while `@firefoxic/oxlint-config/syntactic` and `@firefoxic/oxlint-config/stylistic` export them separately.
 
 ### Fixed
 

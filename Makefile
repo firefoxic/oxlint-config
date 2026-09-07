@@ -12,19 +12,30 @@ help: ## 🧾 Print this message
 	$(call print_help)
 .PHONY: help
 
-lint: ## 🧬 Check code by eslint
+lint: ## 🧬 Check code by oxlint
 	oxlint
 .PHONY: lint
 
-fix: ## 🩹 Fix code by eslint
+fix: ## 🩹 Fix code by oxlint
 	oxlint --fix
 .PHONY: fix
 
-test: ## 🧪 Run tests
+typecheck: ## 🔎 Check types by tsc
+	tsc
+.PHONY: typecheck
+
+build: ## 📦 Build the package into dist/
+	rm -rf dist
+	tsc -p tsconfig.build.json
+	node scripts/build-dts.ts
+	node scripts/build-json.ts
+.PHONY: build
+
+test: build ## 🧪 Run tests
 	vitest
 .PHONY: test
 
-verify: lint test ## ✅ Run every check the CI runs
+verify: lint typecheck test ## ✅ Run every check the CI runs
 .PHONY: verify
 
 release: verify ## 🚀 Release a new version

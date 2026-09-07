@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "nodenext",
+		"types": [
+			"node"
+		],
+		"strict": true,
+		"verbatimModuleSyntax": true,
+		"erasableSyntaxOnly": true,
+		"rewriteRelativeImportExtensions": true,
+		"skipLibCheck": true,
+		"noEmit": true
+	},
+	"include": [
+		"src",
+		"scripts",
+		"tests",
+		"fixtures/ts-config",
+		"oxlint.config.ts",
+		"vitest.config.ts"
+	]
+}

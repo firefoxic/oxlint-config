@@ -1,0 +1,73 @@
+import { defineConfig, type OxlintConfig } from "oxlint"
+
+/** Rules of oxlint's built-in (Rust) plugins. */
+const syntactic: OxlintConfig = defineConfig({
+	plugins: [
+		`eslint`,
+		`import`,
+		`jsdoc`,
+		`oxc`,
+		`promise`,
+		`typescript`,
+		`unicorn`,
+	],
+	categories: {
+		correctness: `error`,
+		pedantic: `error`,
+		restriction: `error`,
+		suspicious: `error`,
+		perf: `error`,
+		nursery: `error`,
+	},
+	rules: {
+		"no-console": [
+			`error`,
+			{
+				allow: [
+					`error`,
+					`info`,
+					`warn`,
+				],
+			},
+		],
+		"no-use-before-define": [
+			`error`,
+			{
+				functions: false,
+			},
+		],
+		"import/max-dependencies": `off`,
+		"import/no-relative-parent-imports": `off`,
+		"import/no-default-export": `off`,
+		"oxc/no-async-await": `off`,
+		"oxc/no-optional-chaining": `off`,
+		"oxc/no-rest-spread-properties": `off`,
+	},
+	overrides: [
+		{
+			files: [`**/*.{ts,mts,cts,tsx}`],
+			rules: {
+				"jsdoc/require-param-type": `off`,
+				"jsdoc/require-returns-type": `off`,
+			},
+		},
+		{
+			files: [`**/*.d.ts`],
+			rules: {
+				"import/unambiguous": `off`,
+			},
+		},
+		{
+			files: [
+				`test/**/*.{js,ts}`,
+				`**/*.{spec,test}.{js,ts}`,
+			],
+			rules: {
+				"max-lines": `off`,
+				"max-lines-per-function": `off`,
+			},
+		},
+	],
+})
+
+export default syntactic
