@@ -38,7 +38,8 @@
 		"!**/*.test.js"
 	],
 	"scripts": {
-		"help": "make help"
+		"help": "make help",
+		"prepare": "git config --local core.hooksPath .githooks || true"
 	},
 	"peerDependencies": {
 		"oxlint": "^1.72.0"
