@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Changed
+
+- The configuration now requires `oxlint` version `1.81.0` or higher.
+
 ### Added
 
 - The `no-console` rule now allows the use of the `error`, `info`, and `warn` methods.

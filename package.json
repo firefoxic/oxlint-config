@@ -22,12 +22,12 @@
 	"devEngines": {
 		"runtime": {
 			"name": "node",
-			"version": ">=26.4",
+			"version": ">=26.9",
 			"onFail": "download"
 		},
 		"packageManager": {
 			"name": "pnpm",
-			"version": ">=11.9",
+			"version": ">=12.4",
 			"onFail": "download"
 		}
 	},
@@ -42,16 +42,16 @@
 		"prepare": "git config --local core.hooksPath .githooks || true"
 	},
 	"peerDependencies": {
-		"oxlint": "^1.72.0"
+		"oxlint": "^1.83"
 	},
 	"dependencies": {
-		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-simple-import-sort": "^13.0.0"
+		"@stylistic/eslint-plugin": "^5",
+		"eslint-plugin-simple-import-sort": "^14"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "^8.62.1",
-		"eslint": "^10.6.0",
-		"oxlint": "^1.72.0"
+		"@typescript-eslint/parser": "^8",
+		"eslint": "^10",
+		"oxlint": "^1"
 	},
 	"keywords": [
 		"config",
