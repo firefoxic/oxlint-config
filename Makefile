@@ -1,32 +1,39 @@
-export PATH := ./node_modules/.bin:$(PATH)
+SHELL := bash
+.SHELLFLAGS := -euo pipefail -c
+.ONESHELL:
+
+export PATH := $(CURDIR)/node_modules/.bin:$(PATH)
+
+ANSI_RESET := \033[0m
+ANSI_BOLD := \033[1m
+ANSI_BOLD_CYAN := \033[1;36m
 
 help: ## 🧾 Print this message
 	$(call print_help)
 .PHONY: help
 
 lint: ## 🧬 Check code by eslint
-	@oxlint
+	oxlint
 .PHONY: lint
 
 fix: ## 🩹 Fix code by eslint
-	@oxlint --fix
+	oxlint --fix
 .PHONY: fix
 
 test: fix ## 🧪 Run tests
-	@node --test
+	node --test
 .PHONY: test
 
-release: lint test ## 🚀 Release a new version
-	@pnpm dlx @firefoxic/release-it
-.PHONY: release
+verify: lint test ## ✅ Run every check the CI runs
+.PHONY: verify
 
-ANSI_RESET := \033[0m
-ANSI_BOLD := \033[1m
-ANSI_BOLD_CYAN := \033[1;36m
+release: verify ## 🚀 Release a new version
+	pnpm dlx @firefoxic/release-it
+.PHONY: release
 
 define print_help
 	@printf "\n\t📜 $(ANSI_BOLD)Available targets:$(ANSI_RESET)\n\n"
-	@grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) \
+	grep -E '^[a-zA-Z0-9_-]+:.*?## ' $(MAKEFILE_LIST) \
 	| awk -F ':|##' '\
 	BEGIN { \
 		ANSI_BOLD_CYAN = "$(ANSI_BOLD_CYAN)"; \
