@@ -10,9 +10,15 @@ import syntactic from "../src/syntactic.ts"
 
 let distDir = new URL(`../dist/`, import.meta.url)
 
+/**
+ * Path to oxlint's JSON schema from `node_modules/@firefoxic/oxlint-config/dist/`
+ * in a consumer project, where `oxlint` is a direct dependency.
+ */
+let schema = `../../../oxlint/configuration_schema.json`
+
 let configs = {
-	"syntactic.json": syntactic,
-	"stylistic.json": createStylistic(resolvePluginSpecifiers(`relative`)),
+	"syntactic.json": { $schema: schema, ...syntactic },
+	"stylistic.json": { $schema: schema, ...createStylistic(resolvePluginSpecifiers(`relative`)) },
 }
 
 await mkdir(distDir, { recursive: true })

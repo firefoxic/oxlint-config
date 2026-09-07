@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - The `no-console` rule now allows the use of the `error`, `info`, and `warn` methods.
 - The configs are now exported for `oxlint.config.ts`: the default export of `@firefoxic/oxlint-config` combines both parts, while `@firefoxic/oxlint-config/syntactic` and `@firefoxic/oxlint-config/stylistic` export them separately.
+- The generated JSON configs now declare `$schema`, pointing to `configuration_schema.json` of the `oxlint` package installed next to this one.
 
 ### Fixed
 
