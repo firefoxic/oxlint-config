@@ -87,6 +87,65 @@ The JSON format cannot import packages, so extend the generated JSON files by th
 }
 ```
 
+## Custom rules
+
+The `enough-is-enough` plugin ships with the stylistic part and adds three rules. All of them are auto-fixable, except for `var` declarations reported by `prefer-let`.
+
+### `enough-is-enough/no-multiline-named-imports`
+
+Named imports must stay on one line. The fix joins the specifiers and keeps a default or namespace import in front of them.
+
+```js
+// 🚫
+import {
+	readFile,
+	writeFile,
+} from "node:fs/promises"
+
+// ✅
+import { readFile, writeFile } from "node:fs/promises"
+```
+
+### `enough-is-enough/no-single-quotes-in-imports-and-object-keys`
+
+Import and export sources, as well as quoted object keys, must use double quotes. Together with `@stylistic/quotes` set to `backtick`, this leaves exactly one quote style for every kind of string.
+
+```js
+// 🚫
+import path from 'node:path'
+export * from './utils.js'
+let headers = { 'content-type': `text/html` }
+
+// ✅
+import path from "node:path"
+export * from "./utils.js"
+let headers = { "content-type": `text/html` }
+```
+
+### `enough-is-enough/prefer-let`
+
+`const` is allowed only at the top level of a module or script, where it declares a true constant. Inside functions and blocks a binding is declared with `let`, and `var` is never allowed (except inside ambient `declare` blocks in TypeScript). See the [rationale](./src/plugins/enough-is-enough/prefer-let/index.md).
+
+```js
+// 🚫
+function area (radius) {
+	const r2 = radius * radius
+
+	return PI * r2
+}
+
+// ✅
+const PI = 3.14
+
+function area (radius) {
+	let r2 = radius * radius
+
+	return PI * r2
+}
+```
+
+The rule contradicts `prefer-const` from oxlint's `style` category, which this config does not enable. Keep `prefer-const` off if you turn that category on.
+
 [license-url]: https://github.com/firefoxic/oxlint-config/blob/main/LICENSE.md
 [license-image]: https://img.shields.io/badge/License-MIT-limegreen.svg
 
