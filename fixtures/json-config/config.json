@@ -1,0 +1,9 @@
+{
+	"extends": [
+		"../../dist/syntactic.json",
+		"../../dist/stylistic.json"
+	],
+	"env": {
+		"node": true
+	}
+}
