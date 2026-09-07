@@ -22,4 +22,4 @@ fi
 
 oxlint -- $changed_files
 
-node --test --test-reporter dot
+vitest --reporter=dot

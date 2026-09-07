@@ -20,8 +20,8 @@ fix: ## 🩹 Fix code by eslint
 	oxlint --fix
 .PHONY: fix
 
-test: fix ## 🧪 Run tests
-	node --test
+test: ## 🧪 Run tests
+	vitest
 .PHONY: test
 
 verify: lint test ## ✅ Run every check the CI runs
