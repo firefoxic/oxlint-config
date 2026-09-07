@@ -12,11 +12,10 @@ const rule: Rule = {
 		},
 		schema: [],
 	},
-	create (context) {
-		let { sourceCode } = context
-
+	createOnce (context) {
 		return {
 			ImportDeclaration (node) {
+				let { sourceCode } = context
 				let namedSpecifiers = node.specifiers.filter((s) => s.type === `ImportSpecifier`)
 
 				if (namedSpecifiers.length === 0) return

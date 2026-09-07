@@ -14,13 +14,11 @@ const rule: Rule = {
 		schema: [],
 	},
 
-	create (context) {
-		let { sourceCode } = context
-
+	createOnce (context) {
 		function isSingleQuoted (node: Literal): node is Literal & { value: string } {
 			if (typeof node.value !== `string`) return false
 
-			let text = sourceCode.getText(node)
+			let text = context.sourceCode.getText(node)
 
 			return text.startsWith(`'`) && text.endsWith(`'`)
 		}

@@ -42,14 +42,15 @@ const rule: Rule = {
 	 * - Reports any `const` declaration that is not in a top-level scope (global, module, or Program) and provides a fixer
 	 *   that replaces the `const` token with `let`.
 	 *
+	 * The rule keeps no per-file state, so `createOnce` needs no `before`/`after` hooks;
+	 * `context.sourceCode` is read inside the visitors, where it refers to the current file.
+	 *
 	 * @param context - Rule context.
 	 * @returns AST node visitors.
 	 */
-	create (context) {
-		let { sourceCode } = context
-
+	createOnce (context) {
 		function isTopLevelScope (node: Node): boolean {
-			let scope = sourceCode.getScope(node)
+			let scope = context.sourceCode.getScope(node)
 
 			return scope.type === `global`
 				|| scope.type === `module`
@@ -67,7 +68,7 @@ const rule: Rule = {
 					})
 				}
 				else if (node.kind === `const` && !isTopLevelScope(node)) {
-					let constToken = sourceCode.getFirstToken(node)
+					let constToken = context.sourceCode.getFirstToken(node)
 
 					if (!constToken) return
 
