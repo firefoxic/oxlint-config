@@ -43,6 +43,15 @@
 	"overrides": [
 		{
 			"files": [
+				"**/*.{ts,mts,cts,tsx}",
+			],
+			"rules": {
+				"jsdoc/require-param-type": "off",
+				"jsdoc/require-returns-type": "off",
+			},
+		},
+		{
+			"files": [
 				"**/*.d.ts",
 			],
 			"rules": {

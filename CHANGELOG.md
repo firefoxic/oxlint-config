@@ -15,6 +15,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - The `no-console` rule now allows the use of the `error`, `info`, and `warn` methods.
 
+### Fixed
+
+- For TypeScript files, the `jsdoc/require-param-type` and `jsdoc/require-returns-type` rules are now disabled, since the types are already declared in the code.
+
 ## [0.4.0] — 2026–07–01
 
 ### Changed
