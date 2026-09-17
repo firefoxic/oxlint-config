@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ### Fixed
 
+- The `no-undefined` rule is now disabled, since together with `eqeqeq` and `no-eq-null` it left no way to check a value against `undefined` other than `typeof`.
 - For TypeScript files, the `jsdoc/require-param-type` and `jsdoc/require-returns-type` rules are now disabled, since the types are already declared in the code.
 
 ## [0.4.0] — 2026–07–01

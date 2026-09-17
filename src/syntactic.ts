@@ -45,6 +45,8 @@ const syntactic: OxlintConfig = defineConfig({
 				],
 			},
 		],
+		// Off for good: `eqeqeq` and `no-eq-null` are both on, so `value == null` is refused twice over, while this rule refuses `value === undefined`. Between the three there is no spelling left for the question the plugin asks throughout, `typeof value === "undefined"` aside, and the handful of places that answer a question with `? … : undefined` say what they mean by it.
+		"no-undefined": `off`,
 		"no-use-before-define": [
 			`error`,
 			{
