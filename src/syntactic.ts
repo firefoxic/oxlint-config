@@ -20,6 +20,13 @@ const syntactic: OxlintConfig = defineConfig({
 		nursery: `error`,
 	},
 	rules: {
+		"max-lines": [
+			`error`,
+			{
+				skipComments: true,
+				skipBlankLines: true,
+			},
+		],
 		"no-console": [
 			`error`,
 			{
