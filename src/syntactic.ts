@@ -53,6 +53,7 @@ const syntactic: OxlintConfig = defineConfig({
 				functions: false,
 			},
 		],
+		"import/exports-last": `off`,
 		"import/max-dependencies": `off`,
 		"import/no-relative-parent-imports": `off`,
 		"import/no-default-export": `off`,
