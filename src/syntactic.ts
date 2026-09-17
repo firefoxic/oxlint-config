@@ -27,6 +27,14 @@ const syntactic: OxlintConfig = defineConfig({
 				skipBlankLines: true,
 			},
 		],
+		"max-lines-per-function": [
+			`error`,
+			{
+				max: 100,
+				skipComments: true,
+				skipBlankLines: true,
+			},
+		],
 		"no-console": [
 			`error`,
 			{
