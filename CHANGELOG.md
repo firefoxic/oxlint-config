@@ -7,11 +7,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Changed
+
+- The configuration now requires `oxlint` version `1.93.0` or higher.
+
 ## [0.5.0] — 2026–09–17
 
 ### Changed
 
-- The configuration now requires `oxlint` version `1.81.0` or higher.
+- The configuration now requires `oxlint` version `1.83.0` or higher.
 - The JSON configs have moved from `lib/*.jsonc` to `dist/*.json`: extend `./node_modules/@firefoxic/oxlint-config/dist/syntactic.json` and `./node_modules/@firefoxic/oxlint-config/dist/stylistic.json` in your `.oxlintrc.json`.
 
 ### Added

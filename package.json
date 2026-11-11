@@ -58,7 +58,7 @@
 		"prepack": "make build"
 	},
 	"peerDependencies": {
-		"oxlint": "^1.83"
+		"oxlint": "^1.93"
 	},
 	"dependencies": {
 		"@stylistic/eslint-plugin": "^5",
