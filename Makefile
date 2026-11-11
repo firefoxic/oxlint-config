@@ -28,7 +28,6 @@ build: ## 📦 Build the package into dist/
 	rm -rf dist
 	tsrs -p tsconfig.build.json
 	node scripts/build-dts.ts
-	node scripts/build-json.ts
 .PHONY: build
 
 test: build ## 🧪 Run tests

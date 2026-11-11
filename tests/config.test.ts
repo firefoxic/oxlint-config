@@ -4,7 +4,7 @@ import path from "node:path"
 import { describe, expect, it } from "vitest"
 
 import config, { stylistic, syntactic } from "../src/index.ts"
-import { PLUGIN_PATHS, resolvePluginSpecifiers } from "../src/plugins.ts"
+import { PLUGIN_PATHS } from "../src/plugins.ts"
 
 describe(`syntactic`, () => {
 	it(`uses only built-in plugins`, () => {
@@ -42,11 +42,5 @@ describe(`stylistic`, () => {
 describe(`default export`, () => {
 	it(`extends both configs in order`, () => {
 		expect(config.extends).toEqual([syntactic, stylistic])
-	})
-})
-
-describe(`resolvePluginSpecifiers`, () => {
-	it(`builds relative specifiers for the generated JSON`, () => {
-		expect(resolvePluginSpecifiers(`relative`)).toEqual(PLUGIN_PATHS.map((pluginPath) => `./${pluginPath}.js`))
 	})
 })

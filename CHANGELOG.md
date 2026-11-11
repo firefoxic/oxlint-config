@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 ### Changed
 
 - The configuration now requires `oxlint` version `1.93.0` or higher.
+- The JSON configs are now removed: only TypeScript configuration files `oxlint.config.ts` are supported.
 
 ### Fixed
 

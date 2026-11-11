@@ -7,10 +7,7 @@ import stylisticRules from "./stylistic/stylistic.ts"
 import { resolvePluginSpecifiers } from "./plugins.ts"
 
 /**
- * Create the stylistic config with the given `jsPlugins` entries.
- *
- * The plugin specifiers differ between the config object exported for
- * `oxlint.config.ts` (absolute paths) and the generated JSON files (relative paths).
+ * Create the stylistic config with the given `jsPlugins` entries (absolute file paths to the JS plugins).
  *
  * @param jsPlugins - Entries for the `jsPlugins` field.
  * @returns The stylistic config.
@@ -42,4 +39,4 @@ export function createStylistic (jsPlugins: ExternalPluginEntry[]): OxlintConfig
 }
 
 /** Rules that need JS plugins: `@stylistic`, `simple-import-sort` and the local `enough-is-enough`. */
-export default createStylistic(resolvePluginSpecifiers(`absolute`))
+export default createStylistic(resolvePluginSpecifiers())

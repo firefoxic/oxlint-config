@@ -52,10 +52,9 @@ let expectedRules = [
 	`eslint(no-var)`,
 ]
 
-describe.each([
-	[`ts-config`, `config.ts`],
-	[`json-config`, `config.json`],
-])(`fixture %s`, (fixture, configFile) => {
+describe.each([`ts-config`])(`fixture %s`, (fixture) => {
+	let configFile = `config.ts`
+
 	it(`loads the config and reports rules of every plugin`, async () => {
 		let diagnostics = await lint(fixture, configFile)
 		let configErrors = diagnostics.filter((d) => !d.code)

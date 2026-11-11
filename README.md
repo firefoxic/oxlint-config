@@ -56,37 +56,6 @@ import syntactic from "@firefoxic/oxlint-config/syntactic"
 import stylistic from "@firefoxic/oxlint-config/stylistic"
 ```
 
-### `.oxlintrc.json`
-
-The JSON format cannot import packages, so extend the generated JSON files by their paths in `node_modules`:
-
-```json
-{
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"extends": [
-		"./node_modules/@firefoxic/oxlint-config/dist/syntactic.json",
-		"./node_modules/@firefoxic/oxlint-config/dist/stylistic.json"
-	],
-	"env": {
-		"node": true
-	},
-	"rules": {
-		// Your rules
-	},
-	"overrides": [
-		// Your overrides
-		{
-			"files": [
-				"**/*.test.{js,ts}"
-			],
-			"rules": {
-				"no-undefined": "off"
-			}
-		}
-	]
-}
-```
-
 ## Custom rules
 
 The `enough-is-enough` plugin ships with the stylistic part and adds three rules. All of them are auto-fixable, except for `var` declarations reported by `prefer-let`.

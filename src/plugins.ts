@@ -4,8 +4,9 @@ import { fileURLToPath } from "node:url"
 import type { ExternalPluginEntry } from "oxlint"
 
 /**
- * JS plugins used by the stylistic config, as paths relative to the package
- * root directory (`src/` in development, `dist/` when published), without extension.
+ * JS plugins used by the stylistic config, as paths relative to the package root directory (`src/` in development, `dist/` when published), without extension.
+ *
+ * The two external plugins (`@stylistic/eslint-plugin` and `eslint-plugin-simple-import-sort`) are re-exported here so that they resolve from this package's own dependencies under pnpm — consumers don't install them. The local `enough-is-enough` plugin lives next to them.
  */
 export const PLUGIN_PATHS = [
 	`plugins/enough-is-enough/index`,
@@ -13,27 +14,16 @@ export const PLUGIN_PATHS = [
 	`plugins/stylistic`,
 ] as const
 
-export type PluginSpecifierMode = `absolute` | `relative`
-
 /**
- * Build `jsPlugins` entries for the stylistic config.
- *
- * - `absolute`: absolute file paths, for config objects passed to `extends` in
- *   `oxlint.config.ts` (oxlint rejects relative plugin paths in extended objects).
- * - `relative`: paths relative to the generated JSON config files in `dist/`.
+ * Build `jsPlugins` entries for the stylistic config: absolute file paths, for config objects passed to `extends` in `oxlint.config.ts` (oxlint rejects relative plugin paths in extended objects).
  *
  * The file extension follows the current module: `.ts` while running from `src/`,
  * `.js` once compiled into `dist/`.
  *
- * @param mode - Which kind of specifiers to build.
  * @returns Entries for the `jsPlugins` field.
  */
-export function resolvePluginSpecifiers (mode: PluginSpecifierMode): ExternalPluginEntry[] {
-	let ext = mode === `absolute` ? path.extname(import.meta.filename) : `.js`
+export function resolvePluginSpecifiers (): ExternalPluginEntry[] {
+	let ext = path.extname(import.meta.filename)
 
-	return PLUGIN_PATHS.map((pluginPath) => {
-		let file = `./${pluginPath}${ext}`
-
-		return mode === `absolute` ? fileURLToPath(new URL(file, import.meta.url)) : file
-	})
+	return PLUGIN_PATHS.map((pluginPath) => fileURLToPath(new URL(`./${pluginPath}${ext}`, import.meta.url)))
 }
