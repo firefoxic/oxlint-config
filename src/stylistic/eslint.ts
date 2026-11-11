@@ -26,7 +26,6 @@ const eslintRules: NonNullable<OxlintConfig[`rules`]> = {
 	"object-shorthand": `error`,
 	"prefer-object-has-own": `error`,
 	"prefer-template": `error`,
-	"import/exports-last": `error`,
 	"import/first": `error`,
 	"import/newline-after-import": `error`,
 	"unicorn/no-nested-ternary": `error`,

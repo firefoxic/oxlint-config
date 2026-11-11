@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - The configuration now requires `oxlint` version `1.93.0` or higher.
 
+### Fixed
+
+- The `import/exports-last` rule is now disabled in the stylistic configuration as well.
+
 ## [0.5.0] — 2026–09–17
 
 ### Changed
