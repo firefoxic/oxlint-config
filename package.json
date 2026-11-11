@@ -43,12 +43,12 @@
 	"devEngines": {
 		"runtime": {
 			"name": "node",
-			"version": ">=26.9",
+			"version": ">=26.13",
 			"onFail": "download"
 		},
 		"packageManager": {
 			"name": "pnpm",
-			"version": ">=12.4",
+			"version": ">=12.19",
 			"onFail": "download"
 		}
 	},
