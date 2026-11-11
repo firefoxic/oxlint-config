@@ -21,12 +21,12 @@ fix: ## 🩹 Fix code by oxlint
 .PHONY: fix
 
 typecheck: ## 🔎 Check types by tsc
-	tsc
+	tsrs
 .PHONY: typecheck
 
 build: ## 📦 Build the package into dist/
 	rm -rf dist
-	tsc -p tsconfig.build.json
+	tsrs -p tsconfig.build.json
 	node scripts/build-dts.ts
 	node scripts/build-json.ts
 .PHONY: build
