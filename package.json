@@ -36,7 +36,7 @@
 		"dist"
 	],
 	"engines": {
-		"node": ">=22.18"
+		"node": "^22.18 || ^24.15 || >=26.13"
 	},
 	"devEngines": {
 		"runtime": {
@@ -65,7 +65,7 @@
 	"devDependencies": {
 		"@types/node": "^26",
 		"oxlint": "^1",
-		"tsrs": "~0.24.0-ts7",
+		"tsrs": "~0.25.0-ts7",
 		"vitest": "^5"
 	},
 	"keywords": [
