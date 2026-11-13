@@ -7,6 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+### Changed
+
+- The config now only supports LTS versions of Node.js.
+
 ## [0.6.0] — 2026–11–11
 
 ### Changed
