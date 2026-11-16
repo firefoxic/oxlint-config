@@ -29,7 +29,7 @@ describe(`stylistic`, () => {
 	})
 
 	it(`enables only rules of the loaded JS plugins or built-in plugins`, () => {
-		let prefixes = [`@stylistic/`, `simple-import-sort/`, `enough-is-enough/`, `import/`, `unicorn/`]
+		let prefixes = [`@stylistic/`, `perfectionist/`, `enough-is-enough/`, `import/`, `unicorn/`]
 
 		for (let rule of Object.keys(stylistic.rules ?? {})) {
 			let prefixed = prefixes.some((prefix) => rule.startsWith(prefix))

@@ -48,7 +48,7 @@ let expectedRules = [
 	`enough-is-enough(no-single-quotes-in-imports-and-object-keys)`,
 	`@stylistic(quotes)`,
 	`@stylistic(semi)`,
-	`simple-import-sort(imports)`,
+	`perfectionist(sort-imports)`,
 	`eslint(no-var)`,
 ]
 

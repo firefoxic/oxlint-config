@@ -6,11 +6,11 @@ import type { ExternalPluginEntry } from "oxlint"
 /**
  * JS plugins used by the stylistic config, as paths relative to the package root directory (`src/` in development, `dist/` when published), without extension.
  *
- * The two external plugins (`@stylistic/eslint-plugin` and `eslint-plugin-simple-import-sort`) are re-exported here so that they resolve from this package's own dependencies under pnpm — consumers don't install them. The local `enough-is-enough` plugin lives next to them.
+ * The two external plugins (`@stylistic/eslint-plugin` and `eslint-plugin-perfectionist`) are re-exported here so that they resolve from this package's own dependencies under pnpm — consumers don't install them. The local `enough-is-enough` plugin lives next to them.
  */
 export const PLUGIN_PATHS = [
 	`plugins/enough-is-enough/index`,
-	`plugins/simple-import-sort`,
+	`plugins/perfectionist`,
 	`plugins/stylistic`,
 ] as const
 

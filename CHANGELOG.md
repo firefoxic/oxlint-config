@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 ### Changed
 
 - The config now only supports LTS versions of Node.js.
+- Import and export sorting now uses `eslint-plugin-perfectionist` with natural ordering.
 
 ## [0.6.0] — 2026–11–11
 

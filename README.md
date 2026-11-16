@@ -9,7 +9,7 @@ Shared config for oxlint by [firefoxic](https://github.com/firefoxic).
 The configuration consists of two parts:
 
 - [syntactic](./src/syntactic.ts) rules — oxlint's built-in plugins with every category enabled,
-- [stylistic](./src/stylistic.ts) rules — formatting rules provided by JS plugins: [`@stylistic`](https://eslint.style), [`simple-import-sort`](https://github.com/lydell/eslint-plugin-simple-import-sort) and the local [`enough-is-enough`](./src/plugins/enough-is-enough) plugin.
+- [stylistic](./src/stylistic.ts) rules — formatting rules provided by JS plugins: [`@stylistic`](https://eslint.style), [`perfectionist`](https://github.com/azat-io/eslint-plugin-perfectionist) (import and export sorting only) and the local [`enough-is-enough`](./src/plugins/enough-is-enough) plugin.
 
 ## Installation
 

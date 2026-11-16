@@ -60,7 +60,7 @@
 	},
 	"dependencies": {
 		"@stylistic/eslint-plugin": "^6",
-		"eslint-plugin-simple-import-sort": "^14"
+		"eslint-plugin-perfectionist": "^5"
 	},
 	"devDependencies": {
 		"@types/node": "^26",

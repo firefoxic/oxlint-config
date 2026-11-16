@@ -2,7 +2,7 @@ import { defineConfig, type ExternalPluginEntry, type OxlintConfig } from "oxlin
 
 import enoughIsEnoughRules from "./stylistic/enough-is-enough.ts"
 import eslintRules from "./stylistic/eslint.ts"
-import simpleImportSortRules from "./stylistic/simple-import-sort.ts"
+import perfectionistRules from "./stylistic/perfectionist.ts"
 import stylisticRules from "./stylistic/stylistic.ts"
 import { resolvePluginSpecifiers } from "./plugins.ts"
 
@@ -32,11 +32,11 @@ export function createStylistic (jsPlugins: ExternalPluginEntry[]): OxlintConfig
 		rules: {
 			...eslintRules,
 			...enoughIsEnoughRules,
-			...simpleImportSortRules,
+			...perfectionistRules,
 			...stylisticRules,
 		},
 	})
 }
 
-/** Rules that need JS plugins: `@stylistic`, `simple-import-sort` and the local `enough-is-enough`. */
+/** Rules that need JS plugins: `@stylistic`, `perfectionist` and the local `enough-is-enough`. */
 export default createStylistic(resolvePluginSpecifiers())
