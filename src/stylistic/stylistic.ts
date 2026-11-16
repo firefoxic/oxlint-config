@@ -2,15 +2,6 @@ import type { OxlintConfig } from "oxlint"
 
 /** Rules of `@stylistic/eslint-plugin`. */
 const stylisticRules: NonNullable<OxlintConfig[`rules`]> = {
-	"@stylistic/array-bracket-newline": `error`,
-	"@stylistic/array-bracket-spacing": `error`,
-	"@stylistic/array-element-newline": [
-		`error`,
-		{
-			consistent: true,
-			multiline: true,
-		},
-	],
 	"@stylistic/arrow-parens": `error`,
 	"@stylistic/arrow-spacing": `error`,
 	"@stylistic/block-spacing": `error`,
@@ -35,20 +26,9 @@ const stylisticRules: NonNullable<OxlintConfig[`rules`]> = {
 			multiline: true,
 		},
 	],
-	"@stylistic/dot-location": [
-		`error`,
-		`property`,
-	],
+	"@stylistic/dot-location": `error`,
 	"@stylistic/eol-last": `error`,
-	"@stylistic/function-call-argument-newline": [
-		`error`,
-		`consistent`,
-	],
 	"@stylistic/function-call-spacing": `error`,
-	"@stylistic/function-paren-newline": [
-		`error`,
-		`multiline-arguments`,
-	],
 	"@stylistic/generator-star-spacing": [
 		`error`,
 		`after`,
@@ -76,6 +56,15 @@ const stylisticRules: NonNullable<OxlintConfig[`rules`]> = {
 		},
 	],
 	"@stylistic/lines-between-class-members": `error`,
+	"@stylistic/list-style": [
+		`error`,
+		{
+			empty: `never`,
+			multiLine: {
+				minItems: 1,
+			},
+		},
+	],
 	"@stylistic/member-delimiter-style": [
 		`error`,
 		{
@@ -115,23 +104,6 @@ const stylisticRules: NonNullable<OxlintConfig[`rules`]> = {
 	"@stylistic/no-trailing-spaces": `error`,
 	"@stylistic/no-whitespace-before-property": `error`,
 	"@stylistic/nonblock-statement-body-position": `error`,
-	"@stylistic/object-curly-newline": [
-		`error`,
-		{
-			consistent: true,
-			multiline: true,
-		},
-	],
-	"@stylistic/object-curly-spacing": [
-		`error`,
-		`always`,
-	],
-	"@stylistic/object-property-newline": [
-		`error`,
-		{
-			allowAllPropertiesOnSameLine: true,
-		},
-	],
 	"@stylistic/one-var-declaration-per-line": `error`,
 	"@stylistic/operator-linebreak": [
 		`error`,

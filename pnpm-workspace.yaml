@@ -2,6 +2,7 @@ gitChecks: false
 
 minimumReleaseAgeExclude:
   - "@firefoxic/*"
+  - "@stylistic/*"
 
 registries:
   default: https://registry.npmjs.org/
