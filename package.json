@@ -16,18 +16,19 @@
 		"url": "git+https://github.com/firefoxic/oxlint-config.git"
 	},
 	"type": "module",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
+			"import": "./dist/index.js"
 		},
 		"./syntactic": {
 			"types": "./dist/syntactic.d.ts",
-			"default": "./dist/syntactic.js"
+			"import": "./dist/syntactic.js"
 		},
 		"./stylistic": {
 			"types": "./dist/stylistic.d.ts",
-			"default": "./dist/stylistic.js"
+			"import": "./dist/stylistic.js"
 		},
 		"./package.json": "./package.json"
 	},
