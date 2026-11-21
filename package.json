@@ -47,7 +47,7 @@
 		},
 		"packageManager": {
 			"name": "pnpm",
-			"version": ">=12.19",
+			"version": ">=12.22",
 			"onFail": "download"
 		}
 	},
@@ -66,7 +66,7 @@
 	"devDependencies": {
 		"@types/node": "^26",
 		"oxlint": "^1",
-		"tsrs": "~0.25.0-ts7",
+		"tsrs": "latest",
 		"vitest": "^5"
 	},
 	"keywords": [
