@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 ## [Unreleased]
 
+## [0.7.1] — 2026–11–21
+
 ### Fixed
 
 - The package now provides type declarations correctly.
@@ -109,7 +111,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and 
 
 - Initial config for `oxlint`.
 
-[Unreleased]: https://github.com/firefoxic/oxlint-config/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/firefoxic/oxlint-config/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/firefoxic/oxlint-config/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/firefoxic/oxlint-config/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/firefoxic/oxlint-config/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/firefoxic/oxlint-config/compare/v0.4.0...v0.5.0
